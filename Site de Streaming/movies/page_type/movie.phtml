@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/all.css">
+    <link rel="stylesheet" href="../css_movies/style.css" type="text/css" />
+    <title>Page description</title>
+</head>
+<body>
+    <div class="acceuil">
+        <?php if(isset($_SESSION['firstName'])){?>
+        <a href="../../streaming.php?user=<?=$_SESSION['pseudo']?>">Acceuil</a>
+        <?php };?>
+        <?php if(empty($_SESSION['firstName'])){?>
+        <a href="../../streaming.php?msg=Acceuil">Acceuil</a>
+        <?php }; ?>
+    </div>
+    <?php
+        foreach($pages as $page){
+            if($page['movie'] == $_GET['movie']){
+    ?>
+    <h2 id="title"><?=$page['name']?></h2>
+    <div class="view">
+        <div>
+            <img src="../img/<?=$page['img']?>" alt="image de <?=$page['name']?>">
+        </div>
+        <div>
+            <a href="../<?=$page['view']?>?movie=<?=$page['movie']?>"><i class="fas fa-play-circle"></i>PLAY</a>
+            <a href="../page_film/movies/<?=$page['download']?>" download="Film <?=$page['name']?>"><i class="fas fa-download"></i>DOWNLOAD</a>
+        </div>
+    </div>
+    <div class="description">
+        <h3>Synopsis</h3>
+        <p><?=$page['description']?></p>
+    </div>
+    
+    <?php
+            };
+        };
+    ?>
+    
+</body>
+</html>

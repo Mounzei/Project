@@ -1,0 +1,209 @@
+.acceuil a{
+    text-decoration:none;
+    color:whitesmoke;
+}
+body{
+    color:white;
+    background-color:black;
+}
+.acceuil{
+    display:flex;
+    justify-content:center;
+}
+.acceuil a{
+    background-color:gold;
+    display:flex;
+    justify-content:center;
+    width:50px;
+    padding:15px;
+    border-radius:15px;
+}
+
+.button{
+    padding:15px;
+    background-color:white;
+    display:flex;
+    justify-content:space-between;
+}
+.body{
+    display:flex;
+    flex-flow:column;
+}
+.movie{
+    width:100%;
+    height:30%;
+}
+.container{
+    width:100%;
+    padding:15px;
+}
+aside{
+    padding:15px;
+    width:100%;
+    display:flex;
+    flex-flow:column;
+    justify-content:space-between;
+    align-items:center;
+    clear:both;
+}
+.title{
+    width:80%;
+    text-align:center;
+    background-image:url("https://www.pevelecarembault.fr/wp-content/uploads/2016/12/Salle-cin%C3%A9ma-vide-776x390.jpg");
+    background-position:center;
+    background-size:cover;
+    color:white;
+}
+aside img{
+    width:200px;
+    height:300px;
+}
+aside p{
+    display:flex;
+    justify-content:space-between;
+}
+#title{
+    color:red;
+    text-align:center;
+}
+.view{
+    display:flex;
+    flex-flow:column;
+    justify-content:space-around;
+    align-items:center;
+}
+.view div:first-child{
+    width:200px;
+    height:250px;
+}
+.view img{
+    width:100%;
+    height:100%;
+}
+.view div:last-child{
+    display:flex;
+    flex-flow:column;
+}
+.view a{
+    text-decoration:none;
+    background-color:green;
+    color:white;
+    padding:15px;
+    margin:15px;
+    border-radius:30px;
+    display:flex;
+    justify-content:space-around;
+}
+.description{
+    margin-top:50px;
+    letter-spacing:1px;
+}
+@media screen and (min-width:768px){
+    body{
+        color:white;
+        background-color:black;
+    }
+    .button{
+        background-color:white;
+        display:flex;
+        justify-content:space-between;
+    }
+    .body{
+        display:flex;
+        flex-flow:row;
+    }
+    .container{
+        width:70%;
+    }
+    .movie{
+        width:90%;
+        height:50%;
+    }
+    aside{
+        width:30%;
+        display:flex;
+        flex-flow:column;
+        justify-content:space-between;
+        align-items:center;
+    }
+    aside img{
+        width:220px;
+        height:325px;
+    }
+    aside p{
+        display:flex;
+        justify-content:space-between;
+    }
+    .view{
+        display:flex;
+        flex-flow:row;
+    }
+    .view div:last-child{
+        display:flex;
+        flex-flow:column;
+    }
+    .view a{
+        text-decoration:none;
+        background-color:green;
+        color:white;
+        padding:30px;
+        margin:15px;
+        border-radius:30px;
+    }
+}
+@media screen and (min-width:1025px){
+    body{
+        color:white;
+        background-color:black;
+    }
+    .button{
+        background-color:white;
+        display:flex;
+        justify-content:space-between;
+    }
+    .body{
+        display:flex;
+        flex-flow:row;
+    }
+    .container{
+        width:70%;
+    }
+    .movie{
+        width:90%;
+        height:50%;
+    }
+    .movie video{
+        position:relative;
+    }
+    aside{
+        width:30%;
+        display:flex;
+        flex-flow:column;
+        justify-content:space-between;
+        align-items:center;
+    }
+    aside img{
+        width:220px;
+        height:325px;
+    }
+    aside p{
+        display:flex;
+        justify-content:space-between;
+    }
+    .view{
+        display:flex;
+        flex-flow:row;
+    }
+    .view div:last-child{
+        display:flex;
+        flex-flow:row;
+    }
+    .view a{
+        text-decoration:none;
+        background-color:green;
+        color:white;
+        padding:30px;
+        margin:15px;
+        border-radius:30px;
+    }    
+}

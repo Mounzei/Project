@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../css_site/font-awesome.min.css" type="text/css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/all.css">
+    <link rel="stylesheet" href="css_page_phtml/pages.css" type="text/css" />
+    <title>Vos commentaires</title>
+</head>
+<body>
+    <header>
+        <div>
+            <p><a href="profil.php?user=<?=$_SESSION['pseudo']?>"><i class="fas fa-user"></i><?=$_SESSION['firstName']?> <?=$_SESSION['lastName']?></a></p>
+        </div>
+        <div>
+            <p><a href="../streaming.php?user=<?=$_SESSION['pseudo']?>"><i class="fas fa-home"></i>ACCEUIL</a></p>
+        </div>
+        <div>
+            <p><a href="profil.php?deco=true"><i class="fas fa-power-off"></i>Se Déconnecter</a></p>
+        </div>
+    </header>
+    <main class="main">
+        <h1>Les commentaires des utilisateurs</h1>
+        <?php foreach($comments as $comment){ ?>
+        <fieldset>
+            <legend><?=$comment['pseudo']?></legend>
+            <p><?=$comment['comment']?></p>
+            <div><?=$comment['time_set']?></div>
+        </fieldset>
+        <?php }; ?>
+    </main>
+</body>
+</html>

@@ -1,0 +1,321 @@
+*{
+    box-sizing: border-box;
+    max-width: 100%;
+    max-height: 100%;
+}
+a{
+    text-decoration: none;
+    color: WHITE;
+}
+li{
+    color:white;
+    list-style: none;
+}
+li:hover{
+    cursor:pointer;
+}
+body{
+    background-color:#1C1C1C;
+    display:flex;
+    flex-flow:column;
+}
+/*header*/
+header{
+    background-color: #1C1C1C;
+}
+
+.menu{
+  
+  color:red;
+  position:relative;
+}
+
+.menu .title{
+  font-size:30px;
+  font-weight:bold;
+  line-height:50px;
+  padding:0 20px;
+  text-transform:uppercase;
+}
+
+.menu nav{
+  background:inherit;
+  font-size:20px;
+  font-weight:bold;
+  height:0;
+  overflow:hidden;
+  text-transform:uppercase;
+  transition:height .2s;
+}
+
+.menu nav > *{
+  display:block;
+  letter-spacing:1px;
+  line-height:2.5;
+  padding:0 20px;
+  width:100%;
+}
+
+.menu nav input{
+  background:rgba(0,0,0,.2);
+  border:none;
+  color:#fff;
+}
+
+.menu .burger
+{
+  appearance:none;
+  -moz-appearance:none;
+  -webkit-appearance:none;
+  color:inherit;
+  cursor:pointer;
+  font-family:'Material Icons';
+  font-size:30px;
+  line-height:50px;
+  margin:0;
+  outline:0;
+  padding:0;
+  position:absolute;
+  text-align:center;
+  top:0;
+  right:50px;
+  width:50px;
+}
+
+.menu .burger:before{
+  content:'OPEN';
+}
+
+.menu .burger:checked:before{
+  content:'CLOSE';
+}
+
+.menu .burger:checked + nav{
+  height:100%;
+}
+header .sans-menu{
+    display: none;
+}
+header input:first-child {
+    color: black;
+    background-color: seashell;
+    width: 100%;
+    border-radius: 30px;
+    font-family: PT sans;   /* Police du texte */
+    font-size: 13px;   /* Taille de la police du texte */
+    font-weight: normal;   /* Graisse du texte : normal = normal ; bold = gras */
+    padding: 5px 10px 5px 10px;   /* Espace entre les bords et le contenu : haut droite bas gauche  */
+    
+}
+#send, #send_btn {
+    background-color: #E8B960;   /* Couleur de fond */
+    border-style: solid 1px #E8B960;
+    padding: 5px 10px 5px 10px;   /* Espace entre les bords et le contenu : haut droite bas gauche  */
+    cursor: pointer;
+    font-family: PT sans;   /* Police du texte */
+    font-size: 13px;   /* Taille de la police du texte */
+    font-weight: normal;   /* Graisse du texte : normal = normal ; bold = gras */
+    letter-spacing: 2px;   /* Espacement des caractères */
+    margin: 10px 0 0 0;   /* Espace autour du bouton : haut droite bas gauche  */
+    text-transform: uppercase;   /* Transforme le texte en majuscules */
+    color: #ffffff;   /* Couleur du texte */
+    border-radius: 30px;
+}
+header .sans-menu nav{
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+    padding: 20px 0 0 0;
+}
+header .sans-menu nav a{
+    color:whitesmoke;
+    border: solid 1px white;
+    padding: 5px 10px 5px 10px;   /* Espace entre les bords et le contenu : haut droite bas gauche  */
+    border-radius: 30px;
+}
+header .sans-menu nav a:first-child {
+    background-color:#995A36;
+}
+header .sans-menu nav a:nth-child(2) {
+    background-color: silver;
+}
+header .sans-menu nav a:last-child {
+    background-color: gold;
+}
+/**main**/
+main{
+    width:80%;
+    margin:0 auto;
+}
+.film{
+    width:100%;
+    height:100%;
+}
+main .film section{
+    display:flex;
+    flex-flow:column;
+}
+main .film section article{
+    width:100%;
+    height:500px;
+    padding:15px;
+}
+main .film section article a{
+    max-width:100%;
+    max-height:100%;
+    padding:5px;
+}
+main .film section article a img{
+    width:100%;
+    height:100%;
+}
+.films{
+    display:none;
+}
+.info #result h2{
+    color:red;
+}
+.info .hide{
+    display:none !important;
+}
+.info{
+    width:100%;
+    max-height:100%;
+    display:flex;
+    flex-flow:row;
+}
+.info #list{
+    padding:10px;
+    width:50%;
+    letter-spacing:1px;
+    display:flex;
+    flex-flow:column;
+}
+.info #result{
+    padding:10px;
+    width:50%;
+    letter-spacing:1px;
+    display:flex;
+    flex-flow:column;
+    justify-content:center;
+    color:white;
+}
+.info #result img{
+    width:250px;
+    height:300px;
+    text-align:center;
+}
+#scrollUp{
+position: fixed;
+bottom : 10px;
+right: -100px;
+opacity: 0.5;
+}
+/**footer**/
+footer{
+    background-color: #1C1C1C;
+    clear: both;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+    display: flex;    
+    justify-content: center;
+    flex-flow: column;
+}
+footer img{
+    border: solid 1px gold;
+    border-radius: 30px;
+    padding: 5px 10px 5px 10px;   /* Espace entre les bords et le contenu : haut droite bas gauche  */
+}
+footer div{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+} 
+footer nav{
+    display: flex;
+    justify-content: space-around;
+}
+footer nav a{
+    border: solid 1px white;
+    padding: 5px 10px 5px 10px;   /* Espace entre les bords et le contenu : haut droite bas gauche  */
+    border-radius: 30px;
+    display: flex;
+    flex-flow: column;
+}
+footer nav a:first-child{
+    background-color:#1C1C1C ;
+    color:gold;
+}
+footer nav a:nth-child(2){
+    background-color:#1C1C1C ;
+    color:whitesmoke;
+}
+footer nav a:last-child{
+    background-color:#1C1C1C ;
+    color:silver;
+}
+
+
+/*Responsive*/
+@media screen and (min-width:768px){
+    body{
+        background-color:#1C1C1C;
+    }
+    /*header*/
+    header{
+        padding-bottom: 50px;
+    }
+    .menu{
+        display: none;
+    }
+    header .sans-menu{
+        display: contents;
+        width: 100%;
+    }
+    header .sans-menu div{
+        display: flex;
+        flex-flow: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+    header .sans-menu div h1{
+        font-weight: bold;
+        color:red;
+    }
+}
+@media screen and (min-width:1025px){
+    body{
+        background-color:#1C1C1C;
+    }
+    /*header*/
+    header{
+        padding-bottom: 50px;
+    }
+    .menu{
+        display: none;
+    }
+    header .sans-menu{
+        display: contents;
+        width: 100%;
+    }
+    header .sans-menu div{
+        display: flex;
+        flex-flow: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+    header .sans-menu div h1{
+        font-weight: bold;
+        color:red;
+    }
+    main .film section{
+        display:flex;
+        flex-flow:row;
+    }
+    main .film section article{
+        width:25%;
+        height:200px;
+        padding:5px;
+    }
+}

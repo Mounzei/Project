@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/all.css">
+    <link rel="stylesheet" href="css_site/normalize.css">
+    <link rel="stylesheet" href="css_site/style.css">
+    <title>A propos de nous</title>
+</head>
+<body>
+    <!--header-->
+    <header>
+        <div class="menu">
+            <span class="title">Streaming</span>
+            <input class="burger" type="checkbox">
+            <nav>
+                <form action="streaming.php" id="searchthis" method="GET">
+                <input type="search" name="search" placeholder="Rechercher votre film">
+                <input id="search-btn" type="submit" value="Rechercher" />
+                </form>
+                <a href="#">FILMS</a>
+                <a href="#">SÉRIES</a>
+                <a href="#">ANIMES</a>
+            </nav>
+        </div>
+        <div class="sans-menu">
+            <div>
+                <?php if(isset($_SESSION['firstName'])){?>
+                <a href="streaming.php?user=<?=$_SESSION['pseudo']?>"><img src="img/logo.png" width="200px" height="100px"></a>
+                <?php }; ?>
+                <?php if(empty($_SESSION['firstName'])){?>
+                <a href="streaming.php?msg=Acceuil"><img src="img/logo.png" width="200px" height="100px"></a>
+                <?php }; ?>
+                <h1>Streaming</h1>
+                <div class="search">
+
+                    <form action="streaming.php" id="searchthis" method="GET">
+                    <input id="search" type="search" name="search" placeholder="Rechercher votre film" />
+                    <input id="search-btn" type="submit" value="Rechercher" />
+                    </form>
+
+                </div>
+            </div>
+            <nav>
+                <?php if(isset($_SESSION['firstName'])){?>
+                <a href="page_html/page_film.php">FILMS</a>
+                <a href="https://wwv.voirfilms.media/series-tv-streaming/">SÉRIES</a>
+                <a href="https://wwv.voirfilms.media/animes/">ANIMES</a>
+                <?php }; ?>
+                <?php if(empty($_SESSION['firstName'])){?>
+                <a href="page_html/page_film.php">FILMS</a>
+                <a href="https://wwv.voirfilms.media/series-tv-streaming/">SÉRIES</a>
+                <a href="https://wwv.voirfilms.media/animes/">ANIMES</a>
+                <?php }; ?>
+            </nav>
+        </div>
+    </header>
+    <!--main-->
+    <main>
+        <section id="nous">
+            <div class="desc">
+                <h3>A propos de nous</h3>
+                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
+                sed diam nonummy nibh euismod tincidunt ut laoreet dolore
+                magna aliquam erat volutpat. Ut wisi enim ad minim veniam,
+                quis nostrud exerci tation ullamcorper suscipit lobortis nisl
+                ut aliquip ex ea commodo consequat. Duis autem vel eum iriure
+                dolor in hendrerit in vulputate velit esse molestie consequat,
+                vel illum dolore eu feugiat nulla facilisis at vero eros et
+                accumsan et iusto odio dignissim qui blandit praesent luptatum
+                zzril delenit augue duis dolore te feugait nulla facilisi.
+                Nam liber tempor cum soluta nobis eleifend option congue
+                nihil imperdiet doming id quod mazim placerat facer possim
+                assum. Typi non habent claritatem insitam; est usus legentis
+                in iis qui facit eorum claritatem. Investigationes
+                demonstraverunt lectores legere me lius quod ii legunt saepius.
+                Claritas est etiam processus dynamicus, qui sequitur mutationem
+                consuetudium lectorum. Mirum est notare quam littera gothica,
+                quam nunc putamus parum claram, anteposuerit litterarum formas
+                humanitatis per seacula quarta decima et quinta decima. Eodem
+                modo typi, qui nunc nobis videntur parum clari, fiant sollemnes
+                in futurum.</p>
+            </div>
+            <hr>
+            <div class="contact">
+                <h3>Nous contactez</h3>
+                <p>Par mail : <a href="mailto:mounzei@outlook.fr">mounzei@XXXXXXX.fr</a></p>
+                <p>Par téléphone : <a href="tel:+33627530696">06XXXXXX96</a></p>
+                <p>Par pigeon voyageur : Pancholepigeon</p>
+            </div>
+            
+        </section>
+    </main>
+    <!--footer-->
+    <footer>
+        <div>
+            <img src="img/logo.png" width="75px" height="75px">
+        </div>
+        <nav>
+            <?php if(isset($_SESSION['firstName'])){?>
+            <a href="streaming.php?user=<?=$_SESSION['pseudo']?>"><i class="fas fa-home"></i>Home</a>
+            <a href="page_phtml/profil.php?user=<?=$_SESSION['pseudo']?>"><i class="fas fa-user"></i>Mon profil</a>
+            <a href="a_propos.php?>"><i class="fas fa-address-card"></i>A PROPOS DE NOUS</a>
+            <?php }; ?>
+            <?php if(empty($_SESSION['firstName'])){?>
+            <a href="streaming.php?msg=Acceuil"><i class="fas fa-home"></i>Home</a>
+            <a href="page_phtml/login.php">Login</a>
+            <a href="page_phtml/register.php">Je veux créer mon profil</a>
+            <a href="a_propos.php"><i class="fas fa-address-card"></i>A PROPOS DE NOUS</a>
+            <?php }; ?>
+        </nav>
+
+    </footer>
+    
+</body>
+</html>

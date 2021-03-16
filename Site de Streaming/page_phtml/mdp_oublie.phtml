@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css_page_phtml/pages.css" type="text/css" />
+    <title>Mot de passe oublié</title>
+</head>
+<body class="body">
+    <section>
+        <form action="mdp_oublie.php" method="POST">
+            <div>
+                <label for="mail">e-mail:</label>
+                <input type="email" id="mail" name="user_mail" placeholder="Entrez votre mail !">
+            </div>
+            <div style="display:flex;justify-content:space-between">
+                <input type="submit" value="Envoyer" style="cursor:pointer">
+                <input type="button" value="Aller à la page de co" style="cursor:pointer" onclick="document.location.href='login.php'">
+            </div>
+            
+        </form>
+    </section>
+    <?php if(!empty($_POST['user_mail'])){
+        $id = $_POST['user_mail'];
+        foreach($email as $emails){
+            if(in_array($id,$emails,true)===true){?>
+    <section>
+        <form action="mdp_oublie.php" method="POST">
+            <div>
+                <label for="mail">e-mail:</label>
+                <input type="email" id="mail" name="user_mail" placeholder="Entrez votre mail !">
+            </div>
+            <div>
+                <label for="newMdp">Votre nouveau mot de passe :</label>
+                <input type="password" id="mdp" name="newMdp" placeholder="Minimun 8 caractéres">
+            </div>
+            <div>
+                <label for="verifyNewMdp">Confirmer votre nouveau mot de passe :</label>
+                <input type="password" id="mdp" name="verifyNewMdp">
+            </div>
+            <div>
+                <input type="submit" value="Envoyer" style="cursor:pointer">
+            </div>
+        </form>
+    </section>
+    <?php } } } ?>
+</body>
+</html>

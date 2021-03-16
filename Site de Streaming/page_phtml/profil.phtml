@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../css_site/font-awesome.min.css" type="text/css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/all.css">
+    <link rel="stylesheet" href="css_page_phtml/pages.css" type="text/css" />
+    <title>Mon profil</title>
+</head>
+<body>
+    <header>
+        <div>
+            <p><i class="fas fa-user"></i><?=$_SESSION['firstName']?> <?=$_SESSION['lastName']?></p>
+        </div>
+        <div>
+            <p><a href="../streaming.php?user=<?=$_SESSION['pseudo']?>"><i class="fas fa-home"></i>ACCEUIL</a></p>
+        </div>
+        <div>
+            <p><a href="profil.php?deco=true"><i class="fas fa-power-off"></i>Se Déconnecter</a></p>
+        </div>
+    </header>
+    <main>
+        <div>
+            <input type="button" value="Changer de mot de passe" onclick="document.location.href='changement.php'">
+        </div>
+	<div>
+            <input type="button" value="Changer vos infos" onclick="document.location.href='changement2.php'">
+        </div>
+        <form action="profil.php" method="POST">
+            <fieldset>
+                <legend>Votre commentaire</legend>
+                <div>
+                    <label for="name">PSEUDO :</label>
+                    <input readonly="readonly" type="text" id="name" name="pseudo" value="<?=$_SESSION['pseudo']?>">
+                </div>
+                <div>
+                    <label for="mail">E-MAIL:</label>
+                    <input readonly="readonly" type="email" id="mail" name="email" value="<?=$_SESSION['email']?>">
+                </div>
+                <div>
+                    <label for="msg">COMMENTAIRE :</label>
+                    <textarea id="msg" name="comment" placeholder="Entrer Votre commentaire"></textarea>
+                </div>
+                
+                <div class="button">
+                    <button type="submit">Envoyer le commentaire</button>
+                </div>
+                
+            </fieldset>
+        </form>
+        <div>
+            <input type="button" value="Voir les commentaires" onclick="document.location.href='comment.php?user=<?=$_SESSION['pseudo']?>'">
+        </div>
+    </main>
+</body>
+</html>

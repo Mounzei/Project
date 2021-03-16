@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css_page_phtml/pages.css" type="text/css" />
+    <title>Enregistrement</title>
+</head>
+<body class="body">
+    <section>
+        <form action="register.php" method="POST">
+            <div>
+                <div>
+                    <label for="name">Pseudo :</label>
+                    <input type="text" id="pseudo" name="pseudo">
+                </div>
+                <div>
+                    <label for="name">Nom :</label>
+                    <input type="text" id="name" name="name">
+                </div>
+                <div>
+                    <label for="lastname">Prénom :</label>
+                    <input type="text" id="lastname" name="lastname">
+                </div>
+            </div>
+            <div>
+                <label for="mail">e-mail:</label>
+                <input type="email" id="mail" name="email">
+            </div>
+            <div>
+                <label for="mdp">Mot de passe :</label>
+                <input type="text" id="mdp" name="mdp" minlength="8" placeholder="Choisissez un mot de passe d'au moins 8 caractéres"></input>
+            </div>
+            <div>
+                <label for="mdp1">Mot de passe :</label>
+                <input type="text" id="mdp1" name="mdp1" minlength="8" placeholder="Confirmer votre mot de passe"></input>
+            </div>
+            <div class="form-example">
+                <input type="submit" value="S' enregistrer" >
+            </div>
+        </form>
+        <?php if(!empty($_POST['name']) && !empty($_POST['lastname']) && !empty($_POST['email']) && !empty($_POST['mdp']) && $_POST['mdp'] == $_POST['mdp1']){?>
+                      <hr style="color:#ff4901">
+                        <div style="text-align:center;color:#ff4901"><p>FÉLICITATION</p></div>
+                      <hr style="color:#ff4901">
+                      <p>Bonjour <?=$_POST['name'].' '.$_POST['lastname']?>.</p>
+                      <p>Vous êtes maintenant enregistré sur notre base de données</p>
+                      <p>Vous pourrez vous connectez maintenant.</p>
+                      <div class="form-example">
+                        <input type="submit" value="Aller sur la page de connection" onclick="document.location.href='login.php'">
+                      </div>                      
+            <?php  } else if(!empty($_POST['name']) && !empty($_POST['lastname']) && !empty($_POST['email']) && !empty($_POST['mdp']) && $_POST['mdp'] != $_POST['mdp1']){?>
+                      <hr style="color:#ff4901">
+                        <div style="text-align:center;color:#ff4901"><p>ATTENTION!</p></div>
+                      <hr style="color:#ff4901">
+                      <p>Vos deux mots de passe ne sont pas identiques.</p>
+    
+            <?php }; ?>          
+    </section>
+</body>
+</html>

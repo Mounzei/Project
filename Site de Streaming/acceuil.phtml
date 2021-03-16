@@ -1,0 +1,21 @@
+<?php
+
+session_start()
+
+?>
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css_site/style.css" type="text/css" />
+    <title>Acceuil</title>
+</head>
+<body>
+    <?php if(empty($_SESSION['firstName']) && empty($_SESSION['lastName'])){ ?>
+    <script type="text/javascript" src="js_site/main.js"></script>
+    <?php }; ?>
+    <?php if(isset($_SESSION['firstName']) && isset($_SESSION['lastName'])){ ?>
+    <input type="submit" id="redirection" name="redirection" value="Aller sur le site" onclick="document.location.href='streaming.php?user=<?=$_SESSION['pseudo']?>'"/>
+    <?php }; ?>
+</body>
+</html>

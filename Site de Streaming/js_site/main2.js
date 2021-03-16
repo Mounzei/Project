@@ -1,0 +1,2 @@
+let msg = " Pour l'instant seul quelques films sont dispo dans le site (ceux présent sur la page d'acceuil ainsi que tout ceux présent sur la page film hors mis les 4 premiers.) Aussi les recherches sur la page d'acceuil se font avec le nom exact des films. Merci de votre compréhension.";
+alert(msg)

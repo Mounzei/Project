@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css_page_phtml/pages.css" type="text/css" />
+    <title>Connexion espace personnel</title>
+</head>
+<body class="body">
+    <section>
+        <form action="login.php" method="POST">
+            <div>
+                <label for="mail">e-mail:</label>
+                <input type="email" id="mail" name="user_mail" placeholder="Entrez votre mail !">
+            </div>
+            <div>
+                <label for="mdp">Mot de passe :</label>
+                <input type="password" id="mdp" name="user_mdp" placeholder="Entrez votre mot de passe !">
+            </div>
+            <div class="form-example">
+                <div>
+                    <input type="button" style="cursor:pointer" onclick="document.location.href='mdp_oublie.php'">
+                    <label for="?mdp">Mot de passe oublié</label>
+                </div>
+                <input type="submit" value="Se connecter" style="cursor:pointer">
+            </div>
+        </form>
+        
+    
+        <?php if(!empty($_SESSION)){?>
+                      <hr style="color:#ff4901">
+                        <div style="text-align:center;color:#ff4901"><p>BIENVENUE</p></div>
+                      <hr style="color:#ff4901">
+                      <p>Bonjour <?=$_SESSION['firstName'].' '.$_SESSION['lastName']?>.</p>
+                      <div class="form-example">
+                        <input type="submit" value="Aller sur le site" onclick="document.location.href='../streaming.php?user=<?=$nom?>'">
+                      </div>    
+                      <?php 
+                              }; ?>
+    </section>
+</body>
+</html>

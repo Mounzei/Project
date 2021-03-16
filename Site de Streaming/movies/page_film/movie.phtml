@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css_movies/style.css" type="text/css" />
+    <title>Film <?=$choix?></title>
+</head>
+<body>
+    <div class="button">
+        <?php if(isset($_SESSION['firstName'])){?>
+        <input type="submit" value="Acceuil" onclick="document.location.href='../../streaming.php?user=<?=$_SESSION['pseudo']?>'">
+        <?php };?>
+        <?php if(empty($_SESSION['firstName'])){?>
+        <input type="submit" value="Acceuil" onclick="document.location.href='../../streaming.php?msg=Acceuil'">
+        <?php }; ?>
+        <input type="submit" value="Télécharger le film" onclick="document.location.href='../page_type/movie.php?movie=<?=$choix?>'" >
+        <input type="submit" value="Page des films" onclick="document.location.href='../../page_html/page_film.php'" >
+    </div>
+    <div class="body">
+        <section class="container">
+            <div class="movie">
+                <?php foreach($movies as $movie){
+                    if($choix == $movie['name']){?>
+                <video controls width="100%" height="100%">
+                    <source src="movies/<?=$movie['movie']?>">
+                        
+                </video>
+            </div>
+            <div class="description">
+                <h4>Synopsis</h4>
+                <p><?=$movie['description']?></p>
+            </div>
+        </section>
+        <aside>
+            <div class="title">
+                <h3><?=$movie['title']?></h3>
+            </div>
+            <img src="../img/<?=$movie['img']?>" alt="Image de <?=$movie['title']?>">
+            <p><div>Titre original</div> <div><?=$movie['original_title']?></div></p>
+            <p><div>Pays d'origine</div> <div><?=$movie['origin_contry']?></div></p>
+            <p><div>Date de sortie</div> <div><?=$movie['date']?></div></p>
+        </aside>
+    </div>
+            <?php };
+            };?>
+</body>
+</html>

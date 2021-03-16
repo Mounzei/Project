@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css_page_phtml/pages.css" type="text/css" />
+    <title>Changement de mot de passe</title>
+</head>
+<body class="body">
+    <section>
+        <form action="changement.php" method="POST">
+            <div>
+            	<label for='pass'>Votre ancien mot de passe</label><br/>
+            	<input type='password' name='pass' id='mdp'/>
+            </div><br/>
+            <div>
+            	<label for='NewPass'>Votre nouveau mot de passe</label><br/>
+            	<input type='password' name='NewPass' id='mdp' minlength="8" placeholder="Minimum 8 caractéres"/>
+            </div><br/>
+            <div>
+            	<label for='NewPassVerif'>Confirmez votre nouveau mot de passe</label><br/>
+            	<input type='password' name='NewPassVerif' />
+            </div><br/>
+            <input type='submit' name='valider'/>
+        </form>
+    </section>
+</body>
+</html>

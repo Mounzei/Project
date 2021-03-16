@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="jquery/flexslider.css" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+    <script src="jquery/jquery.flexslider.js"></script>
+    <script type="text/javascript" charset="utf-8">
+    $(window).load(function() {
+        $('.flexslider').flexslider();
+    });
+    </script>
+    <link rel="stylesheet" href="../css_site/font-awesome.min.css" type="text/css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/all.css">
+    <link rel="stylesheet" href="css_site/normalize.css">
+    <link rel="stylesheet" href="css_site/style.css">
+    <title>Site Streaming 100% gratuit</title>
+</head>
+<body>
+    <!--header-->
+    <header>
+        <div class="menu">
+            <span class="title">Streaming</span>
+            <input class="burger" type="checkbox">
+            <nav>
+                <form action="streaming.php" id="searchthis" method="GET">
+                <input type="search" name="search" placeholder="Rechercher votre film">
+                <input id="search-btn" type="submit" value="Rechercher" />
+                </form>
+                <?php if(isset($_GET['user'])){?>
+                <a href="page_html/page_film.php?type=Movies">FILMS</a>
+                <a href="page_html/page_serie.php?type=Series">SÉRIES</a>
+                <a href="page_html/page_anime.php?type=Animes">ANIMES</a>
+                <?php }; ?>
+                <?php if(isset($_GET['msg'])){?>
+                <a href="page_html/page_film.php?type=Movies">FILMS</a>
+                <a href="page_html/page_serie.php?type=Series">SÉRIES</a>
+                <a href="page_html/page_anime.php?type=Animes">ANIMES</a>
+                <?php }; ?>
+            </nav>
+        </div>
+        <div class="sans-menu">
+            <div>
+                <?php if(isset($_SESSION['firstName'])){?>
+                <a href="streaming.php?user=<?=$_SESSION['pseudo']?>"><img src="img/logo.png" width="200px" height="100px"></a>
+                <?php }; ?>
+                <?php if(empty($_SESSION['firstName'])){?>
+                <a href="streaming.php?msg=Acceuil"><img src="img/logo.png" width="200px" height="100px"></a>
+                <?php }; ?>
+                <h1>Streaming</h1>
+                <div class="search">
+
+                    <form action="streaming.php" id="searchthis" method="GET">
+                    <input id="search" type="search" name="search" placeholder="Rechercher votre film" />
+                    <input id="search-btn" type="submit" value="Rechercher" />
+                    </form>
+
+                </div>
+            </div>
+            <nav>
+                <?php if(isset($_GET['user'])){?>
+                <a href="page_html/page_film.php?type=Movies">FILMS</a>
+                <a href="page_html/page_serie.php?type=Series">SÉRIES</a>
+                <a href="page_html/page_anime.php?type=Animes">ANIMES</a>
+                <?php }; ?>
+                <?php if(isset($_GET['msg'])){?>
+                <a href="page_html/page_film.php?type=Movies">FILMS</a>
+                <a href="page_html/page_serie.php?type=Series">SÉRIES</a>
+                <a href="page_html/page_anime.php?type=Animes">ANIMES</a>
+                <?php }; ?>
+            </nav>
+        </div>
+    </header>
+    <!--main-->
+    <main>
+        <div class="flexslider">
+            <ul class="slides">
+              <li>
+                  <div class="img">
+                    <a href="movies/page_film/movie.php?movie=bad_boys_for_life"><img src="img/bad-boys.jpg" /></a>
+                    <a href="movies/page_film/movie.php?movie=birds"><img src="img/birds.jpg" /></a>
+                    <a href="movies/page_film/movie.php?movie=john_wick"><img src="img/john.jpg" /></a>
+                    <a href="movies/page_film/movie.php?movie=end_game"><img src="img/end-game.jpg" /></a>
+                    <a href="movies/page_film/movie.php?movie=mahnattan"><img src="img/manhattan.jpg" /></a>
+                  </div>
+              </li>
+              <li>
+                <div class="img">
+                    <a href="#"><img src="img/prison.jpg" /></a>
+                    <a href="#"><img src="img/casa.jpg" /></a>
+                    <a href="#"><img src="img/hawai.jpg" /></a>
+                    <a href="#"><img src="img/got.jpg" /></a>
+                    <a href="#"><img src="img/luci.jpg" /></a>
+                  </div>
+              </li>
+              <li>
+                <div class="img">
+                    <a href="#"><img src="img/one.jpg" /></a>
+                    <a href="#"><img src="img/naruto.jpg" /></a>
+                    <a href="#"><img src="img/snk.jpg" /></a>
+                    <a href="#"><img src="img/mha.jpg" /></a>
+                    <a href="#"><img src="img/hxh.jpg" /></a>
+                  </div>
+              </li>
+            </ul>
+        </div>
+        <?php include $template.'.phtml';?>
+            <aside>
+                <div id="menu">
+                    <?php if(isset($_SESSION['firstName'])){?>
+                    <a href="streaming.php?user=<?=$_SESSION['pseudo']?>">Acceuil</a>
+                    <?php }; ?>
+                    <?php if(empty($_SESSION['firstName'])){?>
+                    <a href="streaming.php?msg=Acceuil">Acceuil</a>
+                    <?php }; ?>
+                    <a href="page_html/page_film.php">Films</a>
+                    <a href="#">Séries</a>
+                    <a href="#">Animes</a>
+                </div>
+                <div class="genref">
+                    <h5>Genre par Films</h5>
+                    <a href="#">Action</a>
+                    <a href="#">Aventure</a>
+                    <a href="#">Comédie</a>
+                    <a href="#">Drame</a>
+                    <a href="#">Science Fiction</a>
+                    <a href="#">Thriller</a>
+                    <a href="#">Fantastique</a>
+                    <a href="#">Horreur</a>
+                    <a href="#">Romantique</a>
+                    <a href="#">Policier</a>
+                </div>
+                <div class="genres">
+                    <h5>Genre par Séries</h5>
+                    <a href="#">Action</a>
+                    <a href="#">Aventure</a>
+                    <a href="#">Comédie</a>
+                    <a href="#">Drame</a>
+                    <a href="#">Science Fiction</a>
+                    <a href="#">Thriller</a>
+                    <a href="#">Fantastique</a>
+                    <a href="#">Horreur</a>
+                    <a href="#">Romantique</a>
+                    <a href="#">Policier</a>
+                </div>
+            </aside>
+        </div>
+        <div id="scrollUp">
+        <a href="#top"><img src="img/to_top.png"/></a>
+        </div>
+        
+    </main>
+    <!--footer-->
+    <footer>
+        <div>
+            <img src="img/logo.png" width="75px" height="75px">
+        </div>
+        <nav>
+            <?php if(isset($_SESSION['firstName'])){?>
+            <a href="streaming.php?user=<?=$_SESSION['pseudo']?>"><i class="fas fa-home"></i>Home</a>
+            <a href="page_phtml/profil.php?user=<?=$_SESSION['pseudo']?>"><i class="fas fa-user"></i>Mon profil</a>
+            <a href="a_propos.php>"><i class="fas fa-address-card"></i>A PROPOS DE NOUS</a>
+            <?php }; ?>
+            <?php if(empty($_SESSION['firstName'])){?>
+            <a href="streaming.php?msg=Acceuil"><i class="fas fa-home"></i>Home</a>
+            <a href="page_phtml/login.php">Login</a>
+            <a href="page_phtml/register.php">Je veux créer mon profil</a>
+            <a href="a_propos.php"><i class="fas fa-address-card"></i>A PROPOS DE NOUS</a>
+            <?php }; ?>
+        </nav>
+        
+    </footer>
+    <script type="text/javascript" src="js_site/main2.js"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+    <script type="text/javascript" src="js_site/scroll.js"></script>
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../css_site/font-awesome.min.css" type="text/css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/all.css">
+    <link rel="stylesheet" href="css_page_html/style.css" type="text/css" />
+    <title>Liste des <?=$_GET['type']?></title>
+</head>
+<body>
+    <header>
+        <div class="menu">
+            <span class="title">Streaming</span>
+            <input class="burger" type="checkbox">
+            <nav>
+                <form>
+                <input type="search" type="search" name="search" placeholder="Rechercher votre film">
+                <input id="send_btn" name="send_btn" type="submit" value="Rechercher" />
+                </form>
+                <a href="#">FILMS</a>
+                <a href="#">SÉRIES</a>
+                <a href="#">ANIMES</a>
+            </nav>
+        </div>
+        <div class="sans-menu">
+            <div>
+                <?php if(isset($_SESSION['firstName'])){?>
+                <a href="../streaming.php?user=<?=$_SESSION['pseudo']?>"><img src="../img/logo.png" width="200px" height="100px"></a>
+                <?php }; ?>
+                <?php if(empty($_SESSION['firstName'])){?>
+                <a href="../streaming.php?msg=Acceuil"><img src="../img/logo.png" width="200px" height="100px"></a>
+                <?php }; ?>
+                <h1>Streaming</h1>
+                <div class="search">
+
+                    <form>
+                    <input type="text" name="search" id="search" placeholder="Rechercher les infos de films" />
+                    <input type="submit" name="send" id="send" value="Rechercher" />
+                    </form>
+
+                </div>
+            </div>
+            <nav>
+                <a href="page_film.php?type=Movies">FILMS</a>
+                <a href="page_serie.php?type=Series">SÉRIES</a>
+                <a href="page_anime.php?type=Animes">ANIMES</a>
+            </nav>
+        </div>        
+    </header>
+    <main>
+       <div class="info" class="hide">
+			<div id="list" class="hide">
+				<h2>Résultats de votre recherches</h2>
+			</div>
+			<div id="result" class="hide">
+				<p>hello</p>
+			</div>
+		</div>
+        <?php include $template.'.phtml'; ?>
+        <div id="scrollUp">
+        <a href="#top"><img src="../img/to_top.png"/></a>
+        </div>
+    </main>
+    <footer>
+        <div>
+            <img src="../img/logo.png" width="75px" height="75px">
+        </div>
+        <nav>
+            
+            <?php if(isset($_SESSION['firstName'])){?>
+            <a href="../streaming.php?user=<?=$_SESSION['pseudo']?>"><i class="fas fa-home"></i>Home</a>
+            <a href="../page_phtml/profil.php?user=<?=$_SESSION['pseudo']?>"><i class="fas fa-user"></i>Mon profil</a>
+            <a href="../a_propos.php"><i class="fas fa-address-card"></i>A PROPOS DE NOUS</a>
+            <?php }; ?>
+            <?php if(empty($_SESSION['firstName'])){?>
+            <a href="../streaming.php?msg=Acceuil"><i class="fas fa-home"></i>Home</a>
+            <a href="../page_phtml/login.php">Login</a>
+            <a href="../page_phtml/register.php">Je veux créer mon profil</a>
+            <a href="../a_propos.php"><i class="fas fa-address-card"></i>A PROPOS DE NOUS</a>
+            <?php }; ?>
+        </nav>
+    </footer>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+    <script type="text/javascript" src="../js_site/scroll.js"></script>
+    <script
+    src="https://code.jquery.com/jquery-3.2.1.min.js"
+    integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+    crossorigin="anonymous"></script>
+    <script type="text/javascript" src="js/api.js"></script>
+    <script type="text/javascript" src="js/events.js"></script>
+    <script type="text/javascript" src="js/page_film.js"></script>
+</body>
+</html>
+
+<!--page_serie.php ----- page_anime.php-->
