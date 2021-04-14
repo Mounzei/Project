@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/all.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+    <link rel="icon" href="img/logo2.png">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/main.js"></script>
+    <title>JOUEONT ENCORE ET TOUJOURS</title>
+</head>
+<body>
+    <header>
+        <div class="log">
+            <div>
+                <a href="register.html" width="100px"><i class="fas fa-user-plus"></i>Register</a>
+                <a href="login.html" width="100px"><i class="fas fa-user"></i>Login</a>
+            </div>   
+        </div>
+        <div class="nav">
+			<a href="accueil.html"><img src="img/logo2.png" width="110px"></a>
+            <nav>
+                <a href="accueil.html"><i class="fas fa-home"></i>Accueil</a>
+                <a href="don.html"><i class="fas fa-gift"></i>Dons</a>
+                <a href="event.html"><i class="fas fa-bell"></i>Evenements</a>
+                <a href="reserve.html"><i class="fas fa-calendar-alt"></i>Reservations</a>
+                <a href="contact.html"><i class="fas fa-address-book"></i>Contacts</a>
+            </nav>
+            <form method="get" class="fsearch">
+                <div class="search">
+                    <input type="search" name="search" id="search" placeholder="Taper votre recherche" required style="border-radius: 30px;">
+                    <input type="submit" name="btn-search" id="btn-search" value="Rechercher" style="width: 100px;border-radius: 30px;">
+                </div>
+			</form>
+        </div>
+    </header>
+    <div style="height: 180px;"></div>
+    <main>
+        <script>
+            if(rep==1){
+                document.write("<form class=\"form\" method=\"post\"><div style=\"text-align: center;\"><h4>Remplir le formulaire</h4></div><div><label for=\"nom\">Nom :</label><input type=\"text\" id=\"name\" name=\"user_name\" placeholder=\"Entrez votre nom\"></div><div><label for=\"prenom\">Prénom :</label><input type=\"prénom\" id=\"prénom\" name=\"user_prénom\" placeholder=\"Entrez votre prénom\"></div><div><label for=\"email\">Email :</label><input type=\"email\" id=\"email\" name=\"user-email\" placeholder=\"Entrez votre email\"></div><div><label for=\"address\">Addresse :</label><input type=\"address\" id=\"address\" name=\"user-address\" placeholder=\"Entrez votre addresse\"></div><div><label for=\"desc\">Description du produit:</label><textarea id=\"desc\" name=\"desc\" rows=\"10\" cols=\"35\" placeholder=\"Entrez votre description d'article\"></textarea></div><div class=\"button\"><input type=\"submit\" value=\"Envoyer\"></div></form>")
+            }
+            else if (rep==2){
+                document.write("<form class=\"form\" method=\"post\"><div style=\"text-align: center;\"><h4>Remplir le formulaire</h4></div><div><label for=\"nom\">Nom :</label><input type=\"text\" id=\"name\" name=\"user_name\" placeholder=\"Entrez votre nom\"></div><div><label for=\"prenom\">Prénom :</label><input type=\"prénom\" id=\"prénom\" name=\"user_prénom\" placeholder=\"Entrez votre prénom\"></div><div><label for=\"email\">Email :</label><input type=\"email\" id=\"email\" name=\"user-email\" placeholder=\"Entrez votre email\"></div><div><label for=\"tel\">Téléphone :</label><input type=\"tel\" id=\"tel\" name=\"user-tel\" placeholder=\"Entrez votre numéro\"></div><div><label for=\"date\">Date :</label><input type=\"date\" id=\"date\" name=\"user-date\" placeholder=\"Entrez une date\"></div><label for=\"hour\">Heure :</label><input type=\"hour\" id=\"hour\" name=\"user-hour\" placeholder=\"Entrez une heure de la forme hh:mm\"></div><div><label for=\"desc\">Description du produit:</label><textarea id=\"desc\" name=\"desc\" rows=\"10\" cols=\"35\" placeholder=\"Entrez votre description d'article\"></textarea></div><div class=\"button\"><input type=\"submit\" value=\"Envoyer\"></div></form>")
+            }
+            else{
+                document.write("<p style=\"color:red;font-size:175px;\">Recharger la page (Ctrl+R) et suivez les instructions</p>")
+            }
+        </script>
+    </main>
+    <footer>
+        <div>
+            <h3>En partenarait avec:</h3>
+            <nav>
+                <a href="https://www.croix-rouge.fr/Je-donne/faire-un-don"><img src="img/croix.jpg" alt=""></a>
+                <a href="https://don.secourspopulaire.fr/b/mon-don"><img src="img/secours.png" alt=""></a>
+                <a href="https://www.unicef.fr/faire-un-don?gclid=Cj0KCQiA5vb-BRCRARIsAJBKc6LMsIM0Dse07OxcrU3X1ZNL20tReNmvfMDBLAaQn7NG_QDXQcj0dAMaAqraEALw_wcB"><img src="img/uni.png" alt=""></a>
+            </nav>
+        </div>
+    </footer>  
+</body>
+</html>
