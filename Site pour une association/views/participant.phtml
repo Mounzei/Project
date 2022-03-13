@@ -1,0 +1,8 @@
+<div id="participant">
+    <h3>Liste des particpants pour la maraude n° <?=$_GET['id']?></h3>
+    <ul>
+        <?php foreach( $participants as $participant){?>
+            <li><?=$participant['prenom']?> <?=$participant['nom']?></li> 
+        <?php } ?>
+    </ul>
+</div>

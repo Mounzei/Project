@@ -1,0 +1,51 @@
+<div id="maraude">
+    <section>
+        <h3>S'inscrire pour une maraude</h3>
+        <form action="maraude.php" method="post">
+            <div>
+                <label for="nom">Nom:</label>
+                <input type="text" name="nom">
+            </div>
+            <div>
+                <label for="prenom">Prénom:</label>
+                <input type="text" name="prenom">
+            </div>
+            <div>
+                <label for="email">E-mail:</label>
+                <input type="email" name="email">
+            </div>
+            <div>
+                <label for="maraude">Numéro de la maraude:</label>
+                <select name="maraude">
+                    <?php for($i=0;$i<count($num);$i++){?>
+                    <option value="<?=$num[$i]?>"><?=$num[$i]?></option>
+                    <?php } ?>
+                </select>
+            </div>
+            <div>
+                <label for="num">Numéro de téléphone:</label>
+                <input type="text" name="num">
+            </div>
+            <div>
+                <input type="submit" value="S'inscrire">
+            </div>
+        </form>
+    </section>
+    <section>
+        <h3>Liste de nos maraudes</h3>
+        <?php foreach($maraudes as $maraude){ ?>
+        <div>
+            <h4>N°<?=$maraude['num']?><span style="margin-left: 20px;"><?=$maraude['nom']?></span></h4>
+            <p><?=$maraude['description']?></p>
+            <div>
+                <p>Date de la maraude: <?=$maraude['date']?></p>
+                <a href="<?=$maraude['lieu']?>" target="_blank">Itinéraire</a>
+            </div>
+            <a href="participant.php?id=<?=$maraude['num']?>" target="_blank" rel="noopener noreferrer">Liste des participants</a>
+            <?php if(isset($_SESSION['admin']) && $_SESSION['admin']){?>
+                <a href="?supprimer=<?=$maraude['num']?>">Supprimer</a>
+            <?php } ?>
+        </div>
+        <?php } ?>
+    </section>
+</div>
