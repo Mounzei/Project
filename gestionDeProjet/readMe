@@ -1,0 +1,15 @@
+Nom : Cissé
+Prénom : Mounirou
+Commandes pour excuter : 
+    Au préalable il faut avoir installé java, le JDK ainsi que le maven et faire en sort que vos path soit bien fait
+    1.
+        * Ouvrir le terminal
+        * Faudra être dans le répertoire qui se nomme projet/ du dossier que vous recevrez
+        * Aprés avoir vérifier que vous êtes dans le répertoire projet vous aurez deux possibilités de commandes pour lancer l'application :
+            - java gestionDeProjet/src/App
+            - java -jar gestionDeProjet/src/MonApplication.jar
+    2.
+        * Ouvrir le terminal
+        * Faudra être dans le répertoire qui se nomme projet/gestionDeProjet/my_app/ du dossier que vous recevrez
+        * Aprés avoir vérifier que vous êtes dans le répertoire projet/gestionDeProjet/my_app vous aurez la possibilité pour mettre la commande suivante pour lancer l'application :
+            - mvn exec:java

@@ -1,0 +1,4 @@
+Manifest-Version: 1.0
+Main-Class: gestionDeProjet/src/App
+Created-By: Apache Maven 3.0.4
+Build-Jdk: 1.7.0_05
