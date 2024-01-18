@@ -1,0 +1,8 @@
+Installation du projet
+
+Alors il faut juste aller dans la base de données du serveur 
+et y importer le fichier prometre.sql présent dans le dossier.
+
+Une fois cela fais il faut aller dans le fichier co_bdd.php se 
+trouvant dans le dossier fonctions et y mettre à jour vos accés 
+pour accéder a la base de données.
